@@ -1,0 +1,185 @@
+import React, {Fragment, useState} from 'react';
+
+
+const Form  = () =>{
+
+    const [datos, setDatos] = useState({
+        age: '',
+        job: '',
+        marital: '',
+        education: '',
+        default: '',
+        housing: '',
+        loan: ''
+    })
+    
+    const handleInputChange = (event) => {
+            //console.log(event.target.value)
+            setDatos({
+                ...datos,
+                [event.target.name] : event.target.value 
+            })
+    }
+
+    const send = (event) =>{
+        event.preventDefault();
+        console.log(datos.name + ' ' + datos.lastname)
+    }   
+
+    return(
+        <Fragment>
+            <h1>Ingresar datos del cliente</h1>
+            <p></p>
+            <h3>Datos Basicos</h3>
+            <p></p>
+            <form className="row" onSubmit={send}>
+                <div className="col-md-3">
+                <input name='age' type='number' placeholder= "Ingresar Edad" className="form-control" onChange={handleInputChange}/>
+                </div>
+                <div className="col-md-3">
+                    <select name='job' type='text' placeholder= "Tipo de trabajo" className="form-control" onChange={handleInputChange} >
+                        <option  value="unknown">Tipo de trabajo</option>
+                        <option  value="admin">Administrador</option>
+                        <option  value="blue-collar">Obrero</option>
+                        <option  value="entrepreneur">emprendedor</option>
+                        <option  value="housemaid">Empleada domestica</option>
+                        <option  value="management">gerencia</option>
+                        <option  value="retired">jubilado</option>
+                        <option  value="self-employed">Independiente</option>
+                        <option  value="services">Prestador de servicios</option>
+                        <option  value="student">Estudiante</option>
+                        <option  value="technician">Tecnico</option>
+                        <option  value="unemployed">Desempleado</option>
+                        <option  value="unknown">Otro</option>
+                    </select>
+                </div> 
+                <div className="col-md-3">
+                <select name='marital' type='text' className="form-control" onChange={handleInputChange} >
+                        <option  value="unknown">Estado Marital</option>
+                        <option  value="divorced">Divorciado / Viudo</option>
+                        <option  value="married">Casado / Casada </option>
+                        <option  value="single">Soltero / Soltera</option>
+                        <option  value="unknown">Otro</option>
+                    </select>
+                </div>
+                <div className="col-md-3">
+                <select name='education' type='text' className="form-control" onChange={handleInputChange} >
+                        <option  value="unknown">Educación</option>
+                        <option  value="basic.4y">Basico 4 años</option>
+                        <option  value="basic.6y">Basico 6 años </option>
+                        <option  value="basic.9y">Basico 9 años</option>
+                        <option  value="high.school">Secundaria</option>
+                        <option  value="billiterate">Analfabeto</option>
+                        <option  value="professional.course">Professional curso</option>
+                        <option  value="university.degree">Titulo universitario</option>
+                        <option  value="unknown">Otro</option>
+                    </select>
+                </div>
+                <div className="col-md-3">
+                <select name='default' type='boolean' className="form-control" onChange={handleInputChange} >
+                        <option  value="unknown">Credito en Mora</option>
+                        <option  value="yes">Si</option>
+                        <option  value="no">No </option>
+                        <option  value="unknown">desconocido</option>
+                    </select>
+                </div>
+                <div className="col-md-3">
+                <select name='housing' type='boolean' className="form-control" onChange={handleInputChange} >
+                        <option  value="unknown">Prestamo vivienda</option>
+                        <option  value="yes">Si</option>
+                        <option  value="no">No </option>
+                        <option  value="unknown">desconocido</option>
+                    </select>
+                </div>
+                <div className="col-md-3">
+                <select name='loan' type='boolean' className="form-control" onChange={handleInputChange} >
+                        <option  value="unknown">prestamo personal</option>
+                        <option  value="yes">Si</option>
+                        <option  value="no">No </option>
+                        <option  value="unknown">desconocido</option>
+                    </select>
+                </div>       
+            </form>
+            <p></p>
+            <h3>Datos ultimo contacto</h3>
+            <p></p>
+            <p></p>
+            <form className="row" onSubmit={send}>
+                <div className="col-md-3">
+                <input name='contact' type='number' placeholder= "Ingresar Edad" className="form-control" onChange={handleInputChange}/>
+                </div>
+                <div className="col-md-3">
+                    <select name='job' type='text' placeholder= "Tipo de trabajo" className="form-control" onChange={handleInputChange} >
+                        <option  value="unknown">Tipo de trabajo</option>
+                        <option  value="admin">Administrador</option>
+                        <option  value="blue-collar">Obrero</option>
+                        <option  value="entrepreneur">emprendedor</option>
+                        <option  value="housemaid">Empleada domestica</option>
+                        <option  value="management">gerencia</option>
+                        <option  value="retired">jubilado</option>
+                        <option  value="self-employed">Independiente</option>
+                        <option  value="services">Prestador de servicios</option>
+                        <option  value="student">Estudiante</option>
+                        <option  value="technician">Tecnico</option>
+                        <option  value="unemployed">Desempleado</option>
+                        <option  value="unknown">Otro</option>
+                    </select>
+                </div> 
+                <div className="col-md-3">
+                <select name='marital' type='text' className="form-control" onChange={handleInputChange} >
+                        <option  value="unknown">Estado Marital</option>
+                        <option  value="divorced">Divorciado / Viudo</option>
+                        <option  value="married">Casado / Casada </option>
+                        <option  value="single">Soltero / Soltera</option>
+                        <option  value="unknown">Otro</option>
+                    </select>
+                </div>
+                <div className="col-md-3">
+                <select name='education' type='text' className="form-control" onChange={handleInputChange} >
+                        <option  value="unknown">Educación</option>
+                        <option  value="basic.4y">Basico 4 años</option>
+                        <option  value="basic.6y">Basico 6 años </option>
+                        <option  value="basic.9y">Basico 9 años</option>
+                        <option  value="high.school">Secundaria</option>
+                        <option  value="billiterate">Analfabeto</option>
+                        <option  value="professional.course">Professional curso</option>
+                        <option  value="university.degree">Titulo universitario</option>
+                        <option  value="unknown">Otro</option>
+                    </select>
+                </div>
+                <div className="col-md-3">
+                <select name='default' type='boolean' className="form-control" onChange={handleInputChange} >
+                        <option  value="unknown">Credito en Mora</option>
+                        <option  value="yes">Si</option>
+                        <option  value="no">No </option>
+                        <option  value="unknown">desconocido</option>
+                    </select>
+                </div>
+                <div className="col-md-3">
+                <select name='housing' type='boolean' className="form-control" onChange={handleInputChange} >
+                        <option  value="unknown">Prestamo vivienda</option>
+                        <option  value="yes">Si</option>
+                        <option  value="no">No </option>
+                        <option  value="unknown">desconocido</option>
+                    </select>
+                </div>
+                <div className="col-md-3">
+                <select name='loan' type='boolean' className="form-control" onChange={handleInputChange} >
+                        <option  value="unknown">prestamo personal</option>
+                        <option  value="yes">Si</option>
+                        <option  value="no">No </option>
+                        <option  value="unknown">desconocido</option>
+                    </select>
+                </div>
+                <div className="col-md-3">
+                <button className="btn btn-primary" type="submit">Send</button>
+                </div>          
+            </form>
+            <h2>{datos.age} - {datos.job} - {datos.marital} - {datos.education} - {datos.default} - {datos.housing} - {datos.loan}</h2>
+        </Fragment>
+
+        
+    );
+}
+
+export default Form;
