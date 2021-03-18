@@ -106,57 +106,50 @@ const Form  = () =>{
             <p></p>
             <form className="row" onSubmit={send}>
                 <div className="col-md-3">
-                <input name='contact' type='number' placeholder= "Ingresar Edad" className="form-control" onChange={handleInputChange}/>
-                </div>
-                <div className="col-md-3">
-                    <select name='job' type='text' placeholder= "Tipo de trabajo" className="form-control" onChange={handleInputChange} >
-                        <option  value="unknown">Tipo de trabajo</option>
-                        <option  value="admin">Administrador</option>
-                        <option  value="blue-collar">Obrero</option>
-                        <option  value="entrepreneur">emprendedor</option>
-                        <option  value="housemaid">Empleada domestica</option>
-                        <option  value="management">gerencia</option>
-                        <option  value="retired">jubilado</option>
-                        <option  value="self-employed">Independiente</option>
-                        <option  value="services">Prestador de servicios</option>
-                        <option  value="student">Estudiante</option>
-                        <option  value="technician">Tecnico</option>
-                        <option  value="unemployed">Desempleado</option>
+                    <select name='contact' type='text' placeholder= "Tipo de trabajo" className="form-control" onChange={handleInputChange} >
+                        <option  value="unknown">Tipo de contacto</option>
+                        <option  value="cellular">Celular</option>
+                        <option  value="telephone">Telefono</option>
                         <option  value="unknown">Otro</option>
                     </select>
                 </div> 
                 <div className="col-md-3">
-                <select name='marital' type='text' className="form-control" onChange={handleInputChange} >
-                        <option  value="unknown">Estado Marital</option>
-                        <option  value="divorced">Divorciado / Viudo</option>
-                        <option  value="married">Casado / Casada </option>
-                        <option  value="single">Soltero / Soltera</option>
-                        <option  value="unknown">Otro</option>
+                <select name='month' type='text' className="form-control" onChange={handleInputChange} >
+                        <option  value="unknown"> Mes de contacto</option>
+                        <option  value="jan">Enero</option>
+                        <option  value="feb">Febrero </option>
+                        <option  value="mar">Marzo</option>
+                        <option  value="abr">Abril</option>
+                        <option  value="may">Mayo</option>
+                        <option  value="jun">Junio</option>
+                        <option  value="july">Julio</option>
+                        <option  value="aug">Agosto</option>
+                        <option  value="sep">Septiembre</option>
+                        <option  value="oct">Octubre</option>
+                        <option  value="nov">Noviembre</option>
+                        <option  value="dec">Diciembre</option>
                     </select>
                 </div>
                 <div className="col-md-3">
-                <select name='education' type='text' className="form-control" onChange={handleInputChange} >
-                        <option  value="unknown">Educación</option>
-                        <option  value="basic.4y">Basico 4 años</option>
-                        <option  value="basic.6y">Basico 6 años </option>
-                        <option  value="basic.9y">Basico 9 años</option>
-                        <option  value="high.school">Secundaria</option>
-                        <option  value="billiterate">Analfabeto</option>
-                        <option  value="professional.course">Professional curso</option>
-                        <option  value="university.degree">Titulo universitario</option>
-                        <option  value="unknown">Otro</option>
+                <select name='dayofweek' type='text' className="form-control" onChange={handleInputChange} >
+                        <option  value="unknown">Dia de la semana</option>
+                        <option  value="mon">Lunes</option>
+                        <option  value="tue">Martes</option>
+                        <option  value="wed">Miercoles</option>
+                        <option  value="thu">Jueves</option>
+                        <option  value="fri">Viernes</option>
                     </select>
                 </div>
                 <div className="col-md-3">
                 <select name='default' type='boolean' className="form-control" onChange={handleInputChange} >
-                        <option  value="unknown">Credito en Mora</option>
-                        <option  value="yes">Si</option>
-                        <option  value="no">No </option>
+                        <option  value="unknown">Tiempo de contacto</option>
+                        <option  value="yes">mas de 1 segundos</option>
+                        <option  value="no">menos de 1 segundo </option>
                         <option  value="unknown">desconocido</option>
                     </select>
                 </div>
-                <div className="col-md-3">
-                <select name='housing' type='boolean' className="form-control" onChange={handleInputChange} >
+               <div className="col-md-3">
+            <select name='housing' type='boolean' className="form-control" onChange={handleInputChange} >
                         <option  value="unknown">Prestamo vivienda</option>
                         <option  value="yes">Si</option>
                         <option  value="no">No </option>
@@ -173,7 +166,7 @@ const Form  = () =>{
                 </div>
                 <div className="col-md-3">
                 <button className="btn btn-primary" type="submit">Send</button>
-                </div>          
+                </div>        
             </form>
             <h2>{datos.age} - {datos.job} - {datos.marital} - {datos.education} - {datos.default} - {datos.housing} - {datos.loan}</h2>
         </Fragment>
