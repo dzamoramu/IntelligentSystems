@@ -10,7 +10,16 @@ const Form  = () =>{
         education: '',
         default: '',
         housing: '',
-        loan: ''
+        loan: '',
+        campaign: '',
+        contact: '',
+        month: '',
+        dayofweek: '',
+        pdays: '',
+        previous: '',
+        poutcome: ''
+
+
     })
     
     const handleInputChange = (event) => {
@@ -23,7 +32,7 @@ const Form  = () =>{
 
     const send = (event) =>{
         event.preventDefault();
-        console.log(datos.name + ' ' + datos.lastname)
+        console.log(datos.age + ' ' + datos.job + ' ' + datos.marital + ' ' + datos.education + ' ' + datos.default + ' ' + datos.housing + ' ' + datos.loan + ' ' + datos.campaign + ' ' + datos.contact + ' ' + datos.month + ' ' + datos.dayofweek)
     }   
 
     return(
@@ -141,33 +150,41 @@ const Form  = () =>{
                     </select>
                 </div>
                 <div className="col-md-3">
-                <select name='default' type='boolean' className="form-control" onChange={handleInputChange} >
+                <select name='duration' type='boolean' className="form-control" onChange={handleInputChange} >
                         <option  value="unknown">Tiempo de contacto</option>
                         <option  value="yes">mas de 1 segundos</option>
                         <option  value="no">menos de 1 segundo </option>
                         <option  value="unknown">desconocido</option>
                     </select>
                 </div>
-               <div className="col-md-3">
-            <select name='housing' type='boolean' className="form-control" onChange={handleInputChange} >
-                        <option  value="unknown">Prestamo vivienda</option>
-                        <option  value="yes">Si</option>
-                        <option  value="no">No </option>
-                        <option  value="unknown">desconocido</option>
-                    </select>
-                </div>
-                <div className="col-md-3">
-                <select name='loan' type='boolean' className="form-control" onChange={handleInputChange} >
-                        <option  value="unknown">prestamo personal</option>
-                        <option  value="yes">Si</option>
-                        <option  value="no">No </option>
-                        <option  value="unknown">desconocido</option>
-                    </select>
-                </div>
-                <div className="col-md-3">
-                <button className="btn btn-primary" type="submit">Send</button>
-                </div>        
             </form>
+            <p></p>
+            <h3> Datos Adicionales</h3>
+            <p></p>
+            <p></p>
+            <form className="row" onSubmit={send}>
+                <div className="col-md-3">
+                    <input name='campaign' type='number' placeholder= "Ingresar numero de contactos" className="form-control" onChange={handleInputChange}/> 
+                </div> 
+                <div className="col-md-3">
+                    <input name='pdays' type='number' placeholder= "Numero de días luego de contacto" className="form-control" onChange={handleInputChange}/> 
+                </div>
+                <div className="col-md-3">
+                    <input name='previous' type='number' placeholder= "Contactos realizados en esta campaña" className="form-control" onChange={handleInputChange}/> 
+                </div>
+                <div className="col-md-3">
+                <select name='poutcome' type='text' className="form-control" onChange={handleInputChange} >
+                        <option  value="unknown">Resultado de campaña</option>
+                        <option  value="failure">Fracaso</option>
+                        <option  value="nonexistent">Inexistente</option>
+                        <option  value="success">Exito</option>
+                    </select>
+                </div>
+                <div className="ButSend">
+                <button className="btn btn-primary" type="submit">Send</button>
+                </div>    
+            </form>
+                
             <h2>{datos.age} - {datos.job} - {datos.marital} - {datos.education} - {datos.default} - {datos.housing} - {datos.loan}</h2>
         </Fragment>
 
