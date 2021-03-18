@@ -17,7 +17,13 @@ const Form  = () =>{
         dayofweek: '',
         pdays: '',
         previous: '',
-        poutcome: ''
+        poutcome: '',
+        empvarrate: '',
+        conspriceidx: '',
+        consconfidx: '',
+        Euribor3m: '',
+        Nremployed: ''
+
 
 
     })
@@ -179,6 +185,27 @@ const Form  = () =>{
                         <option  value="nonexistent">Inexistente</option>
                         <option  value="success">Exito</option>
                     </select>
+                </div>   
+            </form>
+            <p></p>
+            <h3> Datos Sociales y economicos</h3>
+            <p></p>
+            <p></p>
+            <form className="row" onSubmit={send}>
+                <div className="col-md-3">
+                    <input name='empvarratee' type='number' placeholder= "Emp.var.rate" className="form-control" onChange={handleInputChange}/> 
+                </div> 
+                <div className="col-md-3">
+                    <input name='conspriceidx' type='number' placeholder= "cons.price.idx" className="form-control" onChange={handleInputChange}/> 
+                </div>
+                <div className="col-md-3">
+                    <input name='consconfidx' type='number' placeholder= "cons.conf.idx" className="form-control" onChange={handleInputChange}/> 
+                </div>
+                <div className="col-md-3">
+                <input name='Euribor3m' type='number' placeholder= "Euribor3m" className="form-control" onChange={handleInputChange}/> 
+                </div>
+                <div className="col-md-3">
+                <input name='Nremployed' type='number' placeholder= "Nr.employed" className="form-control" onChange={handleInputChange}/> 
                 </div>
                 <div className="ButSend">
                 <button className="btn btn-primary" type="submit">Send</button>
