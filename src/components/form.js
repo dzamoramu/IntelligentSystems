@@ -184,8 +184,6 @@ const Form  = () =>{
                 <button className="btn btn-primary" type="submit">Send</button>
                 </div>    
             </form>
-                
-            <h2>{datos.age} - {datos.job} - {datos.marital} - {datos.education} - {datos.default} - {datos.housing} - {datos.loan}</h2>
         </Fragment>
 
         
